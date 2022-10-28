@@ -1,0 +1,77 @@
+<p-toast></p-toast>
+
+<div class="p-5 flex flex-column flex-auto">
+  <div>
+
+    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+      <div class="text-center mb-5">
+        <img src="https://thumbs.dreamstime.com/b/ville-de-grenoble-france-118884621.jpg" alt="Image" height="50" class="mb-3">
+        <div class="text-900 text-3xl font-medium mb-3">{{ this.currentForm.title }}</div>
+        <!--              <span class="text-600 font-medium line-height-3">Don't have an account?</span>-->
+        <!--              <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>-->
+      </div>
+
+      <form (ngSubmit)="this.currentForm.action($event)">
+        <label for="name" class="block text-900 font-medium mb-2">Name</label>
+        <input id="name" type="text" name="name" pInputText class="w-full mb-3" [(ngModel)]="this.item.itemName" [required]="true">
+
+        <label for="quantity" class="block text-900 font-medium mb-2">Quantity</label>
+        <input id="quantity" type="text" name="quantity" pInputText class="w-full mb-3" [(ngModel)]="this.item.itemQuantity" [required]="true">
+        <button pButton pRipple label="{{ this.currentForm.labelButton}}" type="submit" class="w-full">
+          <!--          <p-progressSpinner [style]="{width: '1rem', height: '1rem'}" fill="#3B82F6" styleClass="custom-spinner"></p-progressSpinner>-->
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="p-5 flex flex-column flex-auto">
+  <div class="border-2 border-dashed surface-border border-round surface-section flex-auto">
+    <div class="card">
+      <p-table #dt [value]="items" [rows]="10" [paginator]="true" [globalFilterFields]="['itemName','itemQuantity','itemBought']"
+               [rowHover]="true" dataKey="id"
+               currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+        <ng-template pTemplate="caption">
+          <div class="p-d-flex p-ai-center p-jc-between">
+            <h5 class="p-m-0">Shopping Lists</h5>
+            <!--<span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                </span>-->
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 3rem">
+              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th pSortableColumn="itemName">Name <p-sortIcon field="itemName"></p-sortIcon></th>
+            <th pSortableColumn="itemQuantity">Quantity <p-sortIcon field="itemQuantity"></p-sortIcon></th>
+            <th pSortableColumn="itemBought">Category <p-sortIcon field="itemBought"></p-sortIcon></th>
+<!--            <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>-->
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+          <tr>
+            <td>
+              <p-tableCheckbox [value]="item"></p-tableCheckbox>
+            </td>
+            <td>{{item.itemName}}</td>
+            <td>{{item.itemQuantity}}</td>
+            <td>{{item.itemBought}}</td>
+
+            <td>
+              <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="this.toogleFrom(item)"></button>
+              <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="this.deleteItem(item)"></button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+          <div class="p-d-flex p-ai-center p-jc-between">
+            In total there are {{items ? items.length : 0 }} products.
+          </div>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

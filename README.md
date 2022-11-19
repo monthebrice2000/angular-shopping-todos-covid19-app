@@ -1,6 +1,34 @@
-# ShoppingListApis
+# ShoppingListApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+I build a CRUD shop app with angular framework and PrimeNG Ui library. This app is connected to an Express-Typescript API server
+to make requests and I stored all shopping items in the MongoDB Database.
+
+this link http://localhost:4200/lists displays all resources for shopping.
+the result will be like this : 
+![./results/shopping.png](./results/shopping.png)
+
+# Covid19 App
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+I build a Covid19 application with angular framework and PrimeNG Ui library. This application consumes API like
+[https://api.covid19api.com/summary](https://api.covid19api.com/summary) to get all important informations about 
+Covid19
+
+this link http://localhost:4200/dashboard displays all resources for Covid19.
+the result will be like this : 
+![./results/covid19.png](./results/covid19.png)
+
+# TodoList App
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+I build a CRUD TodoList app with angular framework and PrimeNG Ui library. This app is connected to an Express-Typescript API server
+to make requests and I stored all shopping items in the MongoDB Database.
+
+this link http://localhost:4200/todos displays all resources for todos and display a form to register a new todo.
+
+the result will be like this : 
+![./results/todo.png](./results/todo.png)
 
 ## Development server
 

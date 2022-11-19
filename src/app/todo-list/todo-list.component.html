@@ -1,0 +1,55 @@
+<router-outlet></router-outlet>
+
+<div class="p-5 flex flex-column flex-auto">
+  <div class="border-2 border-dashed surface-border border-round surface-section flex-auto">
+    <div class="card">
+      <p-table #dt [value]="this.todos" [rows]="10" [(selection)]="this.selectedTodo" [paginator]="true" [globalFilterFields]="['title','completed']"
+               [rowHover]="true" dataKey="id"
+               currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+        <ng-template pTemplate="caption">
+          <div class="p-d-flex p-ai-center p-jc-between">
+            <h5 class="p-m-0">Todo List</h5>
+            <!--<span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                </span>-->
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <!--<th style="width: 3rem">
+              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>-->
+            <th pSortableColumn="title">Title<p-sortIcon field="title"></p-sortIcon></th>
+            <th pSortableColumn="completed">Completed <p-sortIcon field="completed"></p-sortIcon></th>
+<!--            <th pSortableColumn="itemBought">Category <p-sortIcon field="itemBought"></p-sortIcon></th>-->
+            <!--            <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>-->
+            <th>Actions</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-todo>
+          <tr>
+            <!--<td>
+              <p-tableCheckbox [value]="todo"></p-tableCheckbox>
+            </td>-->
+            <td>{{todo.title}}</td>
+            <td>
+              <p-inputSwitch (onChange)="this.updateTodo(todo)" [(ngModel)]="todo.completed"></p-inputSwitch>
+            </td>
+<!--            <td>{{item.itemBought}}</td>-->
+
+            <td>
+<!--              <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"></button>-->
+              <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="this.deleteTodo(todo)"></button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+          <div class="p-d-flex p-ai-center p-jc-between">
+            In total there are {{todos ? todos.length : 0 }} products.
+          </div>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

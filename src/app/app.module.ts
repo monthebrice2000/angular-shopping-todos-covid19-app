@@ -36,6 +36,16 @@ import {CheckboxModule} from "primeng/checkbox";
 import {ProgressSpinnerModule} from "primeng/progressspinner";
 import {MessagesModule} from "primeng/messages";
 import {MessageService} from "primeng/api";
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ShoppingDetailComponent } from './shopping-detail/shopping-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { WorldSummaryComponent } from './world-summary/world-summary.component';
+import { CountrySummaryComponent } from './country-summary/country-summary.component';
+import { TodoFormComponent } from './todo-form/todo-form.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import {TodoService} from "./todo.service";
+import {InputSwitch, InputSwitchModule} from "primeng/inputswitch";
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 const routes: Routes = [
   {
@@ -46,13 +56,47 @@ const routes: Routes = [
   {
     path:"lists",
     component: ShoppingComponent
+  },
+  {
+    path: "lists/:id",
+    component: ShoppingDetailComponent,
+  },
+  {
+    path: "dashboard",
+    component: DashboardComponent
+  },
+  {
+    path: "register",
+    component: RegisterFormComponent
+  },
+  {
+    path: "todos",
+    component: TodoListComponent,
+    children: [
+      {
+        path: "",
+        component: TodoFormComponent
+      }
+    ]
+  },
+  {
+    path: "**",
+    component: NotFoundComponent
   }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingComponent
+    ShoppingComponent,
+    NotFoundComponent,
+    ShoppingDetailComponent,
+    DashboardComponent,
+    WorldSummaryComponent,
+    CountrySummaryComponent,
+    TodoFormComponent,
+    TodoListComponent,
+    RegisterFormComponent
   ],
   imports: [
     RouterModule.forRoot( routes ),
@@ -88,10 +132,11 @@ const routes: Routes = [
     ConfirmDialogModule,
     InputTextareaModule,
     ProgressSpinnerModule,
+    InputSwitchModule,
     ToastModule,
     HttpClientModule
   ],
-  providers: [ShoppingService, MessageService],
+  providers: [ShoppingService, MessageService, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,24 @@
+<p-toast></p-toast>
+
+<div class="p-5 flex flex-column flex-auto">
+  <div>
+
+    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+      <div class="text-center mb-5">
+        <img src="https://thumbs.dreamstime.com/b/ville-de-grenoble-france-118884621.jpg" alt="Image" height="50" class="mb-3">
+        <div class="text-900 text-3xl font-medium mb-3">Create Todo</div>
+        <!--              <span class="text-600 font-medium line-height-3">Don't have an account?</span>-->
+        <!--              <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>-->
+      </div>
+
+      <form (ngSubmit)="this.create()">
+
+        <label for="quantity" class="block text-900 font-medium mb-2">Title</label>
+        <input id="quantity" type="text" name="quantity" pInputText class="w-full mb-3" [(ngModel)]="this.todo.title" required>
+        <button pButton pRipple label="Create" type="submit" class="w-full">
+          <!--          <p-progressSpinner [style]="{width: '1rem', height: '1rem'}" fill="#3B82F6" styleClass="custom-spinner"></p-progressSpinner>-->
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

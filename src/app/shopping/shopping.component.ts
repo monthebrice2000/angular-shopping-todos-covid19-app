@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ShoppingService} from "../shopping.service";
 import {ShoppingItemDTO} from "../../assets/models/ShoppingItemDTO";
 import {MessageService} from "primeng/api";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-shopping',
@@ -27,7 +28,7 @@ export class ShoppingComponent implements OnInit {
   };
   currentForm : any = {};
 
-  constructor(private shoppingService: ShoppingService, private messageService: MessageService) { }
+  constructor(private shoppingService: ShoppingService, private messageService: MessageService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   async ngOnInit(): Promise<void> {
     this.currentForm = this.allForm.create;
@@ -76,6 +77,12 @@ export class ShoppingComponent implements OnInit {
     this.currentForm = this.allForm.update;
     this.selectedItem = item;
     this.item = {...item};
+  }
+
+  async viewItem(selectedItem: ShoppingItemDTO): Promise<void>{
+    let index = 1 + this.items.findIndex( item => item._id === selectedItem._id );
+    //this.router.navigate([`/lists/`, index, {item: JSON.stringify({...selectedItem} ) } ] );
+    this.router.navigate( [index, {item: JSON.stringify({...selectedItem} ) } ], { relativeTo: this.activatedRoute})
   }
 
 }

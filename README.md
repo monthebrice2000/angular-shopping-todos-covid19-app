@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 I build a CRUD shop app with angular framework and PrimeNG Ui library. This app is connected to an Express-Typescript API server
 to make requests and I stored all shopping items in the MongoDB Database.
 
-this link [https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/lists](https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/lists) displays all resources for shopping.
+this link [Shopping App](https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/lists) displays all resources for shopping.
 the result will be like this : 
 ![./results/shopping.PNG](./results/shopping.PNG)
 
@@ -15,7 +15,7 @@ I build a Covid19 application with angular framework and PrimeNG Ui library. Thi
 [https://api.covid19api.com/summary](https://api.covid19api.com/summary) to get all important informations about 
 Covid19
 
-this link [https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/dashboard](https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/dashboard) displays all resources for Covid19.
+this link [Covid19 App](https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/dashboard) displays all resources for Covid19.
 the result will be like this : 
 ![./results/covid19.PNG](./results/covid19.PNG)
 
@@ -25,7 +25,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 I build a CRUD TodoList app with angular framework and PrimeNG Ui library. This app is connected to an Express-Typescript API server
 to make requests and I stored all shopping items in the MongoDB Database.
 
-this link [https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/todos](https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/todos) displays all resources for todos and display a form to register a new todo.
+this link [Todos List App](https://63791995124cbb0009db3353--sweet-kulfi-1dcd5b.netlify.app/todos) displays all resources for todos and display a form to register a new todo.
 
 the result will be like this : 
 ![./results/todo.png](./results/todo.png)

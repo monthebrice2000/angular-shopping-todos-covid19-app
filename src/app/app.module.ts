@@ -99,7 +99,7 @@ const routes: Routes = [
     RegisterFormComponent
   ],
   imports: [
-    RouterModule.forRoot( routes ),
+    RouterModule.forRoot( routes, { useHash: false} ),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,

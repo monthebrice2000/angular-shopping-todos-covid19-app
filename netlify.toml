@@ -1,15 +1,4 @@
 [[redirects]]
-  from = "/"
-  to = "/lists"
-
-[[redirects]]
-  from = "/lists"
-  to = "/lists"
-
-[[redirects]]
-  from = "/dashboard"
-  to = "/dashboard"
-
-[[redirects]]
-  from = "/todos"
-  to = "/todos"
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -6,7 +6,7 @@ to make requests and I stored all shopping items in the MongoDB Database.
 
 this link http://localhost:4200/lists displays all resources for shopping.
 the result will be like this : 
-![./results/shopping.png](./results/shopping.png)
+![./results/shopping.PNG](./results/shopping.PNG)
 
 # Covid19 App
 
@@ -17,7 +17,7 @@ Covid19
 
 this link http://localhost:4200/dashboard displays all resources for Covid19.
 the result will be like this : 
-![./results/covid19.png](./results/covid19.png)
+![./results/covid19.PNG](./results/covid19.PNG)
 
 # TodoList App
 
